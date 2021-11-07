@@ -2,6 +2,9 @@
   name = Trung Hoang
   email = 39042628+trung-hn@users.noreply.github.com
 
+[core]
+	autocrlf = true
+
 [color]
   # Enable colors in color-supporting terminals
   ui = auto
