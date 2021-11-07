@@ -111,5 +111,9 @@ alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold bl
 
 unsetopt BEEP
 
+# Default Vim editor
+export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/vim
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
