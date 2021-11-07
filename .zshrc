@@ -115,5 +115,19 @@ unsetopt BEEP
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
 
+#Put this on the bottom of file
+# SPACESHIP_PROMPT_ADD_NEWLINE="true" 
+# SPACESHIP_CHAR_SYMBOL=" \uf0e7" 
+# SPACESHIP_CHAR_PREFIX="\uf296" 
+# SPACESHIP_CHAR_SUFFIX=(" ") 
+# SPACESHIP_CHAR_COLOR_SUCCESS="yellow" 
+# SPACESHIP_PROMPT_DEFAULT_PREFIX="$USER" 
+# SPACESHIP_PROMPT_FIRST_PREFIX_SHOW="true" 
+# SPACESHIP_USER_SHOW="true"
+
+# Color scheme background when ls
+export LS_COLORS="di=34;40:ln=36;40:so=35;40:pi=33;40:ex=32;40:bd=1;33;40:cd=1;33;40:su=0;41:sg=0;43:tw=0;42:ow=34;40:"
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
