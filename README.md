@@ -3,7 +3,7 @@
 ## Auto config
 
 - .zshrc: <https://github.com/ohmyzsh/ohmyzsh>
-- .p10k.zsh: <https://github.com/romkatv/powerlevel10k>
+- .p10k.zsh: run `p10k configure`
 
 ## User config
 
