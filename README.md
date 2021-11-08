@@ -7,7 +7,7 @@
 
 ## User config
 
-- .vimrc
+- .vimrc: Remember to change the end of line character before copying to `~/.vimrc`
 
 ## References
 
