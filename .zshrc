@@ -78,8 +78,12 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
+plugins=( 
+    git
+    zsh-autosuggestions
+    web-search
+    copyfile
+)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -105,8 +109,9 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ohmyzsh="vim ~/.oh-my-zsh"
 alias zshconfig="vim ~/.zshrc"
+alias vimconfig='vim ~/.vimrc'
 alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all -20"
 alias gpl='git pull'
 alias cdd='cd /mnt/d/'
@@ -115,6 +120,7 @@ alias cdw='cd /mnt/d/Workspace/'
 alias cdo='cd /mnt/d/OneDrive/'
 alias explorer='explorer.exe'
 
+# Turn off Bell
 unsetopt BEEP
 
 # Default Vim editor
