@@ -105,10 +105,15 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="vim ~/.zshrc"
 alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 alias gpl='git pull'
+alias cdd='cd /mnt/d/'
+alias cdc='cd /mnt/c/'
+alias cdw='cd /mnt/d/Workspace/'
+alias cdo='cd /mnt/d/OneDrive/'
+alias explorer='explorer.exe'
 
 unsetopt BEEP
 
