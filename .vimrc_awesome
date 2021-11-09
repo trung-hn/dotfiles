@@ -11,3 +11,14 @@ try
   source ~/.vim_runtime/my_configs.vim
 catch
 endtry
+
+" USER CONFIG
+set number
+set relativenumber
+set belloff=all
+
+" Assign F3 to toogle hlsearch
+nnoremap <F3> :set hlsearch!<CR>
+
+" No wrap
+set nowrap
