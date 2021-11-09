@@ -55,6 +55,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # You can also set it to another string to have that shown instead of the default red dots.
 # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -78,11 +79,30 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
+source ~/.zplug/init.zsh
+
+# Enhanccd
+zplug "b4b4r07/enhancd", use:init.sh
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load #--verbose
+
+
 plugins=( 
     git
     zsh-autosuggestions
     web-search
     copyfile
+    zsh-syntax-highlighting
 )
 source $ZSH/oh-my-zsh.sh
 
@@ -108,7 +128,7 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
+# Aliases
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias zshconfig="vim ~/.zshrc"
 alias vimconfig='vim ~/.vimrc'
@@ -119,6 +139,10 @@ alias cdc='cd /mnt/c/'
 alias cdw='cd /mnt/d/Workspace/'
 alias cdo='cd /mnt/d/OneDrive/'
 alias explorer='explorer.exe'
+alias x.='explorer .'
+alias x='explorer'
+alias xr='explorer \\\\wsl$\\Ubuntu-20.04\\home\\trung'
+alias vi='vim'
 
 # Turn off Bell
 unsetopt BEEP
@@ -143,3 +167,6 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir dir_writeable vcs ssh newline prompt_char)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_inidicator command_execution_time background_jobs direnv asdf virtualenv anaconda pyenv goenv nodenv nvm nodeenv rbenv rvm fvm luaenv jenv plenv phpenv scalaenv haskell_stack kubecontext terraform aws aws_eb_env azure gcloud google_app_cred toolbox context nordvpn ranger nnn xplr vim_shell midnight_commander nix_shell vi_mode todo timewarrior taskwarrior time ram battery newline)
+
