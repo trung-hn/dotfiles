@@ -141,7 +141,7 @@ alias cdo='cd /mnt/d/OneDrive/'
 alias explorer='explorer.exe'
 alias x.='explorer .'
 alias x='explorer'
-alias xr='explorer \\\\wsl$\\Ubuntu-20.04\\home\\trung'
+alias x~='explorer \\\\wsl$\\Ubuntu-20.04\\home\\trung'
 alias vi='vim'
 
 # Turn off Bell
