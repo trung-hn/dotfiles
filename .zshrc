@@ -84,7 +84,8 @@ source ~/.zplug/init.zsh
 
 # Enhanccd
 zplug "b4b4r07/enhancd", use:init.sh
-ENHANCD_COMMAND=ecd; export ENHANCD_COMMAND
+export ENHANCD_FILTER=fzf:fzy:fzf-tmux:peco:percol:gof:pick:icepick:sentaku:selecta
+export ENHANCD_COMMAND=ecd
 
 
 # Install plugins if there are plugins that have not been installed
@@ -156,6 +157,9 @@ alias -g T='| tail'
 alias -g G='| grep'
 alias -g L='| less'
 alias -g M='| most'
+## cless, ccat
+alias cat='colorize_cat'
+alias less='colorize_less'
 ## Git
 alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all -20"
 alias gpl='git pull'
