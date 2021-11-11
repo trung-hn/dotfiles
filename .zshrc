@@ -83,7 +83,9 @@ COMPLETION_WAITING_DOTS="true"
 source ~/.zplug/init.zsh
 
 # Enhanccd
-# zplug "b4b4r07/enhancd", use:init.sh
+zplug "b4b4r07/enhancd", use:init.sh
+ENHANCD_COMMAND=ecd; export ENHANCD_COMMAND
+
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -96,19 +98,21 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load #--verbose
 
-
 plugins=( 
-    git
-    zsh-autosuggestions
-    web-search
+    colored-man-pages
+    colorize
     copyfile
+    fd
+    git
     z
-    zsh-syntax-highlighting
+    web-search
+    zsh-interactive-cd
+    zsh-autosuggestions
+    zsh-syntax-highlighting # must be last
 )
 source $ZSH/oh-my-zsh.sh
 
-
-# fzf settings
+# fzf config, run ~/.fzf/install to reset config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # User configuration
@@ -131,24 +135,42 @@ source $ZSH/oh-my-zsh.sh
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
+
 # Aliases
+## config
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias zshconfig="vim ~/.zshrc"
 alias vimconfig='vim ~/.vimrc'
+## ls, exa
 alias ls='exa --icons --classify'
 alias l2='exa --icons --classify --tree --level=2'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias dud='du -d 1 -h'
+alias duf='du -sh'
+alias t='tail -f'
+## Command line head / tail shortcuts
+alias -g H='| head'
+alias -g T='| tail'
+alias -g G='| grep'
+alias -g L='| less'
+alias -g M='| most'
+## Git
 alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all -20"
 alias gpl='git pull'
+## cd, enhancd
+alias c='ecd'
 alias cdd='cd /mnt/d/'
 alias cdc='cd /mnt/c/'
 alias cdw='cd /mnt/d/Workspace/'
 alias cdo='cd /mnt/d/OneDrive/'
+## explorer
 alias explorer='explorer.exe'
 alias x.='explorer .'
 alias x='explorer'
 alias x~='explorer \\\\wsl$\\Ubuntu-20.04\\home\\trung'
+## vim
 alias vi='vim'
 
 # Turn off Bell
@@ -158,7 +180,7 @@ unsetopt BEEP
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
 
-#Put this on the bottom of file
+# Put this on the bottom of file
 # SPACESHIP_PROMPT_ADD_NEWLINE="true" 
 # SPACESHIP_CHAR_SYMBOL=" \uf0e7" 
 # SPACESHIP_CHAR_PREFIX="\uf296" 
@@ -176,5 +198,7 @@ export VISUAL=/usr/bin/vim
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 #POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir dir_writeable vcs ssh newline prompt_char)
 #POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_inidicator command_execution_time background_jobs direnv asdf virtualenv anaconda pyenv goenv nodenv nvm nodeenv rbenv rvm fvm luaenv jenv plenv phpenv scalaenv haskell_stack kubecontext terraform aws aws_eb_env azure gcloud google_app_cred toolbox context nordvpn ranger nnn xplr vim_shell midnight_commander nix_shell vi_mode todo timewarrior taskwarrior time ram battery newline)
+
+
 
 
