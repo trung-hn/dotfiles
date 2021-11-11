@@ -83,7 +83,7 @@ COMPLETION_WAITING_DOTS="true"
 source ~/.zplug/init.zsh
 
 # Enhanccd
-zplug "b4b4r07/enhancd", use:init.sh
+# zplug "b4b4r07/enhancd", use:init.sh
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -96,14 +96,20 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load #--verbose
 
+
 plugins=( 
     git
     zsh-autosuggestions
     web-search
     copyfile
+    z
     zsh-syntax-highlighting
 )
 source $ZSH/oh-my-zsh.sh
+
+
+# fzf settings
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # User configuration
 
@@ -131,6 +137,8 @@ source $ZSH/oh-my-zsh.sh
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias zshconfig="vim ~/.zshrc"
 alias vimconfig='vim ~/.vimrc'
+alias ls='exa --icons --classify'
+alias l2='exa --icons --classify --tree --level=2'
 alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all -20"
 alias gpl='git pull'
 alias cdd='cd /mnt/d/'
@@ -160,12 +168,13 @@ export VISUAL=/usr/bin/vim
 # SPACESHIP_PROMPT_FIRST_PREFIX_SHOW="true" 
 # SPACESHIP_USER_SHOW="true"
 
-# Color scheme background when ls
-export LS_COLORS="di=34;40:ln=36;40:so=35;40:pi=33;40:ex=32;40:bd=1;33;40:cd=1;33;40:su=0;41:sg=0;43:tw=0;42:ow=34;40:"
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+# No need for the next 2 lines because I am using exa 
+# export LS_COLORS="di=34;40:ln=36;40:so=35;40:pi=33;40:ex=32;40:bd=1;33;40:cd=1;33;40:su=0;41:sg=0;43:tw=0;42:ow=34;40:"
+# zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir dir_writeable vcs ssh newline prompt_char)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_inidicator command_execution_time background_jobs direnv asdf virtualenv anaconda pyenv goenv nodenv nvm nodeenv rbenv rvm fvm luaenv jenv plenv phpenv scalaenv haskell_stack kubecontext terraform aws aws_eb_env azure gcloud google_app_cred toolbox context nordvpn ranger nnn xplr vim_shell midnight_commander nix_shell vi_mode todo timewarrior taskwarrior time ram battery newline)
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir dir_writeable vcs ssh newline prompt_char)
+#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_inidicator command_execution_time background_jobs direnv asdf virtualenv anaconda pyenv goenv nodenv nvm nodeenv rbenv rvm fvm luaenv jenv plenv phpenv scalaenv haskell_stack kubecontext terraform aws aws_eb_env azure gcloud google_app_cred toolbox context nordvpn ranger nnn xplr vim_shell midnight_commander nix_shell vi_mode todo timewarrior taskwarrior time ram battery newline)
+
 
