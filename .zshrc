@@ -113,8 +113,22 @@ plugins=(
 )
 source $ZSH/oh-my-zsh.sh
 
+# colorize setting
+export ZSH_COLORIZE_TOOL=chroma
+export ZSH_COLORIZE_STLYE="monokai"
+# out of chroma: --style must be one of "abap","algol","algol_nu","arduino","autumn","borland","bw","colorful","dracula","emacs","friendly","fruity","github","igor","lovelace","manni","monokai","monokailight","murphy","native","paraiso-dark","paraiso-light","pastie","perldoc","pygments","rainbow_dash","rrt","solarized-dark","solarized-dark256","solarized-light","swapoff","tango","trac","vim","vs","xcode" but got "default"
+
 # fzf config, run ~/.fzf/install to reset config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# bindkey -v
+bindkey -M viins '^R' fzf-history-widget # r for reverse history search
+# bindkey -M viins '^x^f' fzf-file-widget # f for file
+# bindkey -M viins '^x^j' fzf-cd-widget # j for jump
+# bindkey -M viins '^t' transpose-chars # t for transpose
+# bindkey -M viins '\ec' capitalize-word # c for capitalizae
+bindkey -r "^T" # was for fzf-file-widget
+bindkey -r "^[c" # was for fzf-cd-widget
+
 
 # User configuration
 
@@ -151,6 +165,8 @@ alias mv='mv -i'
 alias dud='du -d 1 -h'
 alias duf='du -sh'
 alias t='tail -f'
+## fd-find
+alias fd='fdfind'
 ## Command line head / tail shortcuts
 alias -g H='| head'
 alias -g T='| tail'
