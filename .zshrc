@@ -156,6 +156,7 @@ bindkey -r "^[c" # was for fzf-cd-widget
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias zshconfig="vim ~/.zshrc"
 alias vimconfig='vim ~/.vimrc'
+alias p10kconfig='vim ~/.p10k.zsh'
 ## ls, exa
 alias ls='exa --icons --classify'
 alias l2='exa --icons --classify --tree --level=2'
