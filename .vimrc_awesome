@@ -22,3 +22,9 @@ nnoremap <F3> :set hlsearch!<CR>
 
 " No wrap
 set nowrap
+
+" Remap https://www.youtube.com/watch?v=hSHATqh8svM&list=PLm323Lc7iSW9CtibHhhQErDh167XfL4EU
+nnoremap Y y$
+nnoremap n nzzzv "zz center your cursor, zv unfold
+nnoremap N Nzzzv
+nnoremap J mzJ`z
