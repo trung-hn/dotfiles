@@ -178,7 +178,7 @@ alias -g M='| most'
 alias cat='colorize_cat'
 alias less='colorize_less'
 ## Git
-alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all -20"
+alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim red)by %an%C(reset)%C(bold yellow)%d%C(reset)' --all -20"
 alias gpl='git pull'
 ## cd, enhancd
 alias c='ecd'
